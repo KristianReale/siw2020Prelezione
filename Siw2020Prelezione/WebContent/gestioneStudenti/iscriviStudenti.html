@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<header>
+		<h1>Iscrivi un nuovo studente</h1>			
+		<h2>Compila il seguente form</h2>
+		<form method="post" action="inviaDatiStudente">			
+			<label class="control-label col-sm-2" for="matricola">Matricola</label>			
+			<input class="form-control" name="matricola" type="text"
+					value="INSERISCI MATRICOLA" />
+						
+			<div class="form-group">
+				<label class="control-label" for="nome">Nome</label>				
+				<input class="form-control" name="nome" type="text"
+						value="INSERISCI NOME" />				
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="nome">Cognome</label>
+				<div>
+					<input class="form-control" name="cognome" type="text"
+						value="INSERISCI COGNOME" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="dataNascita">Data
+					di nascita</label>
+				<div>
+					<input class="form-control" name="dataNascita" type="date"
+						value="INSERISCI DATA NASCITA" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="password">Password</label>
+				<div class="col-sm-5">
+					<input class="form-control" name="password" type="password" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label" for="password2">Conferma
+					Password</label>
+				<div>
+					<input class="form-control" name="password2" type="password" />
+				</div>
+			</div>			
+			<input type="submit" /> <input type="reset" />
+		</form>
+	</header>
+</body>
+</html>
