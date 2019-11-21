@@ -1,0 +1,48 @@
+@charset "ISO-8859-1";
+
+h2 {
+	color: red;
+	text-shadow: 3px 1px blue;
+}
+
+p {
+	color: green;
+}
+
+.intestazione{
+	text-align: center;	
+}
+
+h3.intestazione{
+	text-align: right;	
+}
+
+
+
+
+article {
+	position: absolute;			
+	width: 50%;
+}
+
+article+article{
+	position: absolute;
+    left: 50%;  
+}
+
+aside{
+	position: absolute;
+	left: 30%;	
+}
+aside+aside{
+	position: absolute;
+	left: 70%;	
+}
+
+
+
+
+
+
+
+
