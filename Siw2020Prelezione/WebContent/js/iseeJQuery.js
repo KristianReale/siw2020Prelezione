@@ -12,62 +12,65 @@ function Studente(matricola, nome, cognome, dataNascita){
 //calcolaISEE(studente2);
 
 function carica(studente){
-	var elemento = document.getElementById("selStudente");
-	elemento.innerHTML = "<h3>" + studente.matricola 
+	alert("sono jquery");
+	$("#selStudente").html("<h3>" + studente.matricola 
 						+ ":" + studente.nome
 						+ ":" + studente.cognome
-						+ "</h3>";
+						+ "</h3>");
 	
-	var numComp = document.getElementById("numComponenti");
-	numComp.addEventListener("blur", aggiungiCaselle);
+	var numComponenti = $("#numComponenti");
+	numComponenti.on("blur", aggiungiCaselle);
 	
-	var butCalcola = document.getElementById("calcolaISEE");
-	butCalcola.addEventListener("click", calcolaISEE);
+	var butCalcola = $("#calcolaISEE");
+	butCalcola.on("click", calcolaISEE);
 }
 
 function aggiungiCaselle(){
-	var numComponenti = document.getElementById("numComponenti");
-	var nComp = numComponenti.value;
+	var numComponenti = $("#numComponenti");
+	var nComp = numComponenti.val();
 	
-	var tagValori = document.getElementById("valori");
+	var tagValori = $("#valori");
 	
 	svuota();
 	
-	for (var i = 0; i < nComp; i++){
-		var redd = document.createElement("div");
-		redd.setAttribute("class", "form-group");
-		redd.innerHTML = "<label>REDDITO del componente:</label>" +
+	for (var i = 0; i < parseInt(nComp); i++){
+		var redd = $("<div></div>");
+		redd.addClass("form-group");
+		redd.html("<label>REDDITO del componente:</label>" +
 				"<input class='redditoComponente' type='text' " +
-				"class='form-control' />";
+				"class='form-control' />");
 		
-		var patr = document.createElement("div");
-		patr.setAttribute("class", "form-group");
-		patr.innerHTML = "<label>PATRIMONIO del componente:</label>" +
+		var patr = $("<div></div>");
+		patr.addClass("form-group");
+		patr.html("<label>PATRIMONIO del componente:</label>" +
 				"<input class='patrimonioComponente' type='text' " +
-				"class='form-control' />";
+				"class='form-control' />");
 		
-		tagValori.appendChild(redd);
-		tagValori.insertBefore(patr, redd.nextSibling);
-//		tagValori.appendChild(patr);
+		tagValori.append(redd);
+		redd.after(patr);
 	}
 }
 
 function svuota(){
-	var tagValori = document.getElementById("valori");
-	while (tagValori.firstChild){
-		tagValori.removeChild(tagValori.firstChild);
-	}
+	var tagValori = $("#valori");
+	tagValori.empty();
+	
+	$("#ISR").text("");
+	$("#ISP").text("");
+	$("#ISE").text("");
+	$("#scalaEquivalenza").text("");
+	$("#ISEE").text("");
 }
 
 function calcolaISEE(){
 	
-	var tagNumComponenti = document.getElementById("numComponenti");
+	var tagNumComponenti = $("#numComponenti");
 	
 	//var numeroComponenti = prompt("Inserisci il numero dei componenti");
-	var numeroComponenti = parseInt(tagNumComponenti.value);
+	var numeroComponenti = parseInt(tagNumComponenti.val());
 	
-	var redditi = document.getElementsByClassName("redditoComponente");
-	var patrimoni = document.getElementsByClassName("patrimonioComponente");
+	var redditi = $(".redditoComponente");
+	var patrimoni = $(".patrimonioComponente");
 	
 	var redditoComplessivo = 0;
 	var patrimonioComplessivo = 0;
@@ -130,11 +133,11 @@ function calcolaISEE(){
 //	
 //	alert(reportISEECalcolato);
 	
-	document.getElementById("ISR").innerHTML = ISR;
-	document.getElementById("ISP").innerHTML = ISP;
-	document.getElementById("ISE").innerHTML = ISE;
-	document.getElementById("scalaEquivalenza").innerHTML = SE;
-	document.getElementById("ISEE").innerHTML = ISEE;
+	$("#ISR").text(ISR);
+	$("#ISP").text(ISP);
+	$("#ISE").text(ISE);
+	$("#scalaEquivalenza").text(SE);
+	$("#ISEE").text(ISEE);
 }
 
 
