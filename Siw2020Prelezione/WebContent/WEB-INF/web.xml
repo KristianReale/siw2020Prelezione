@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+<!-- 
+   <display-name>Gestione Segreteria</display-name>
+  <welcome-file-list>
+    <welcome-file>home.jsp</welcome-file>
+  </welcome-file-list> --> 
+  
+  <servlet>
+  	<servlet-name>PrendiStudenti</servlet-name>
+  	<servlet-class>controller.DammiStudenti</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>PrendiStudenti</servlet-name>
+  	<url-pattern>/ottieniStudenti</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>IscrizioneStudente</servlet-name>
+  	<servlet-class>controller.IscriviStudente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>IscrizioneStudente</servlet-name>
+  	<url-pattern>/gestioneStudenti/inviaDatiStudente</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>FaiLogin</servlet-name>
+  	<servlet-class>controller.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FaiLogin</servlet-name>
+  	<url-pattern>/doLogin</url-pattern>
+  </servlet-mapping>
+  <!--  
+  <servlet>
+  	<servlet-name>Credenziali</servlet-name>
+  	<servlet-class>controller.CredenzialiLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Credenziali</servlet-name>
+  	<url-pattern>/inviaCredenziali</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>Iscrizione</servlet-name>
+  	<servlet-class>controller.IscriviStudente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Iscrizione</servlet-name>
+  	<url-pattern>/gestioneStudenti/iscriviStudenti</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>HomeServlet</servlet-name>
+    <servlet-class>controller.Home</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomeServlet</servlet-name>
+    <url-pattern></url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>DammiICorsi</servlet-name>
+    <servlet-class>controller.FormIscrizioneFiller</servlet-class>
+  </servlet>  
+  <servlet-mapping>
+    <servlet-name>DammiICorsi</servlet-name>
+    <url-pattern>/gestioneStudenti/dammiCorsiDiLaurea</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>scuolaStud</servlet-name>
+    <servlet-class>controller.ScuolaStudente</servlet-class>
+  </servlet>  
+  <servlet-mapping>
+    <servlet-name>scuolaStud</servlet-name>
+    <url-pattern>/dettagliScuola</url-pattern>
+  </servlet-mapping>
+  -->
+ 
+   
+</web-app>
