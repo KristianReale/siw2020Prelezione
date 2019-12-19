@@ -7,12 +7,12 @@ public class Studente {
 	private String matricola;
 	private String nome;
 	private String cognome;
-	private Date dataNascita;
+	private String dataNascita;
 	private Scuola scuolaDiDiploma;
 
 	public Studente(){}
 	
-	public Studente(String matricola,String nome,String cognome,Date dataNascita){
+	public Studente(String matricola,String nome,String cognome,String dataNascita){
 		this.matricola = matricola;
 		this.nome = nome;
 		this.cognome = cognome;
@@ -44,11 +44,11 @@ public class Studente {
 		this.cognome = cognome;
 	}
 
-	public Date getDataNascita() {
+	public String getDataNascita() {
 		return dataNascita;
 	}
 
-	public void setDataNascita(Date dataNascita) {
+	public void setDataNascita(String dataNascita) {
 		this.dataNascita = dataNascita;
 	}
 	

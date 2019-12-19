@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" 
+prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +30,15 @@
 		<ul class="nav navbar-nav">
 			<li class="nav-item"><a class="dropdown-item" href="">Chi siamo</a></li></li>
 			<li class="nav-item"><a class="dropdown-item" href="">Contattaci</a></li></li>
+			<li class="nav-item">
+				<c:if test="${utente != null}">
+					<p>Sei loggato come ${utente.username}</p>
+					<a class="dropdown-item" href="login?logout=true">Logout</a>
+				</c:if>
+				<c:if test="${utente == null}">
+					<a class="dropdown-item" href="login">Login</a>
+				</c:if>	
+			</li></li>
 		</ul>
 	</nav>
 	</aside>
@@ -60,7 +73,7 @@
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Studenti</a>
 				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="ottieniStudenti">Elenco Studenti</a></li>			
+					<li><a class="dropdown-item" href="gestioneStudenti/ottieniStudenti">Elenco Studenti</a></li>			
 					<li><a class="dropdown-item" href="gestioneStudenti/iscriviStudenti.html">Iscrivi uno studente</a></li>
 					<li><a class="dropdown-item" href="servizi/isee.html">Calcolo ISEE</a></li>					
 				</ul>

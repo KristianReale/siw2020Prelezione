@@ -7,12 +7,30 @@
   </welcome-file-list> --> 
   
   <servlet>
+    <servlet-name>HomeServlet</servlet-name>
+    <servlet-class>controller.Home</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomeServlet</servlet-name>
+    <url-pattern></url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>FaiLogin</servlet-name>
+  	<servlet-class>controller.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FaiLogin</servlet-name>
+  	<url-pattern>/login</url-pattern>
+  </servlet-mapping>    
+  
+  <servlet>
   	<servlet-name>PrendiStudenti</servlet-name>
   	<servlet-class>controller.DammiStudenti</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>PrendiStudenti</servlet-name>
-  	<url-pattern>/ottieniStudenti</url-pattern>
+  	<url-pattern>/gestioneStudenti/ottieniStudenti</url-pattern>
   </servlet-mapping>
   
   <servlet>
@@ -24,14 +42,6 @@
   	<url-pattern>/gestioneStudenti/inviaDatiStudente</url-pattern>
   </servlet-mapping>
   
-  <servlet>
-  	<servlet-name>FaiLogin</servlet-name>
-  	<servlet-class>controller.Login</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>FaiLogin</servlet-name>
-  	<url-pattern>/doLogin</url-pattern>
-  </servlet-mapping>
   <!--  
   <servlet>
   	<servlet-name>Credenziali</servlet-name>
