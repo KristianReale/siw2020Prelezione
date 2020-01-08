@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Dipartimento;
 import model.Studente;
 import persistence.TempDB;
 
@@ -39,5 +40,15 @@ public class IscriviStudente  extends HttpServlet{
 		rd.forward(req, resp);
 		
 //		System.out.println(matricola + " "  + nome + " " + cognome);
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		List<Dipartimento> dipartimenti = TempDB.getInstance().dammiDipartimenti();
+		
+		req.setAttribute("dipartimenti", dipartimenti);
+		
+		RequestDispatcher rd = req.getRequestDispatcher("iscriviStudenti.jsp");
+		rd.forward(req, resp);
 	}
 }
