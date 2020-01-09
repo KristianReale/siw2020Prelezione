@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Studente;
-import persistence.TempDB;
+import persistence.DBManager;
 
 public class DammiStudenti extends HttpServlet{
 	@Override
@@ -19,7 +19,7 @@ public class DammiStudenti extends HttpServlet{
 		
 //		resp.getWriter().println("<h1>Sto elaborando la richiesta</h1>");
 		
-		List<Studente> studenti = TempDB.getInstance().dammiStudenti();
+		List<Studente> studenti = DBManager.getInstance().dammiStudenti();
 		req.setAttribute("studenti", studenti);
 		
 		RequestDispatcher rd = req.getRequestDispatcher

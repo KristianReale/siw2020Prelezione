@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Utente;
-import persistence.TempDB;
+import persistence.DBManager;
 
 public class Login extends HttpServlet{
 	@Override
@@ -36,7 +36,7 @@ public class Login extends HttpServlet{
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
 		
-		Utente utente = TempDB.getInstance().login(username, password);
+		Utente utente = DBManager.getInstance().login(username, password);
 		
 		if (utente != null) {
 			req.getSession().setAttribute("utente", utente);

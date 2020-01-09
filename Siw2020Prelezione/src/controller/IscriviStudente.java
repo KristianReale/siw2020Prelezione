@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.Dipartimento;
 import model.Studente;
-import persistence.TempDB;
+import persistence.DBManager;
 
 
 public class IscriviStudente  extends HttpServlet{
@@ -30,8 +30,8 @@ public class IscriviStudente  extends HttpServlet{
 		stud.setDataNascita(dataNascita);
 		stud.setNome(nome);
 		
-		TempDB.getInstance().aggiungiStudente(stud);
-		List<Studente> studenti = TempDB.getInstance().dammiStudenti();
+		DBManager.getInstance().aggiungiStudente(stud);
+		List<Studente> studenti = DBManager.getInstance().dammiStudenti();
 		
 		req.setAttribute("studenteRegistrato", stud);
 		req.setAttribute("studenti", studenti);
@@ -44,7 +44,7 @@ public class IscriviStudente  extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Dipartimento> dipartimenti = TempDB.getInstance().dammiDipartimenti();
+		List<Dipartimento> dipartimenti = DBManager.getInstance().dammiDipartimenti();
 		
 		req.setAttribute("dipartimenti", dipartimenti);
 		

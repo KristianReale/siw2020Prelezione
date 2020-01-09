@@ -9,6 +9,7 @@ public class Studente {
 	private String cognome;
 	private String dataNascita;
 	private Scuola scuolaDiDiploma;
+	private CorsoDiLaurea corsoDiLaurea;
 
 	public Studente(){}
 	
@@ -69,13 +70,11 @@ public class Studente {
 		this.scuolaDiDiploma = scuolaDiDiploma;
 	}
 	
-	public String toString() {
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
-		return "Studente[" + this.getMatricola() + ", " + 
-				this.getNome() + ", " + 
-					this.getCognome() + ", " +
-						sdf.format(this.getDataNascita()) + ", " +
-						this.getScuolaDiDiploma() + "]";
+	public CorsoDiLaurea getCorsoDiLaurea() {
+		return corsoDiLaurea;
+	}
+	
+	public void setCorsoDiLaurea(CorsoDiLaurea corsoDiLaurea) {
+		this.corsoDiLaurea = corsoDiLaurea;
 	}
 }

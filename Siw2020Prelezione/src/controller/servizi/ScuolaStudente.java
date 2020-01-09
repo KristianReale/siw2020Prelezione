@@ -15,7 +15,7 @@ import org.json.JSONObject;
 
 import model.Scuola;
 import model.Studente;
-import persistence.TempDB;
+import persistence.DBManager;
 
 
 public class ScuolaStudente extends HttpServlet{
@@ -36,7 +36,7 @@ public class ScuolaStudente extends HttpServlet{
 			studente.setCognome(json.getString("cognome"));			
 			studente.setNome(json.getString("nome"));
 		
-			Studente dbStudente  = TempDB.getInstance().dammiStudente(studente.getMatricola());
+			Studente dbStudente  = DBManager.getInstance().dammiStudente(studente.getMatricola());
 			Scuola scuola = dbStudente.getScuolaDiDiploma(); 
 			
 			JSONObject jsonIndirizzo = new JSONObject(scuola);			

@@ -3,13 +3,14 @@ package model;
 import java.util.List;
 
 public class Dipartimento {
-	String id;
+	Long id;
 	String nome;
 	List<CorsoDiLaurea> corsiDiLaurea;
-	public String getId() {
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getNome() {

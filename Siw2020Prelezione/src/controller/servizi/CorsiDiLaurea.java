@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.CorsoDiLaurea;
 import model.Dipartimento;
-import persistence.TempDB;
+import persistence.DBManager;
 
 public class CorsiDiLaurea extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String dipartimento = req.getParameter("dipartimento");
 		
-		Dipartimento dip = TempDB.getInstance().dammiDipartimento(dipartimento);
+		Dipartimento dip = DBManager.getInstance().dammiDipartimento(dipartimento);
 		
 		resp.getOutputStream().println("<option>---</option>");
 		for (CorsoDiLaurea cld : dip.getCorsiDiLaurea()) {
